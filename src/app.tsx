@@ -22,8 +22,10 @@ export function App({ menu }: { menu: StoreMenu }) {
 
   return (
     <>
-      <Header store={menu.store} sum={sum} lines={lines} onClear={clear} />
-      <CategoryNav categories={categories.map((c) => c.category)} />
+      <div class="top">
+        <Header store={menu.store} sum={sum} lines={lines} onClear={clear} />
+        <CategoryNav categories={categories.map((c) => c.category)} />
+      </div>
       <main>
         {categories.map((c) => (
           <MenuSection key={c.category} category={c.category} items={c.items} state={state} dispatch={dispatch} />
