@@ -36,6 +36,7 @@ npm run build      # dist/ に出力
 ```
 
 `main` への push で GitHub Actions がテストとビルドを行い、GitHub Pages に配信します。
+初回だけ、リポジトリの Settings → Pages → Source で「GitHub Actions」を選んでおく必要があります。
 
 ## 免責
 

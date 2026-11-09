@@ -1,29 +1,45 @@
-import { useEffect, useMemo, useReducer, useState } from 'preact/hooks';
+import { useLayoutEffect, useMemo, useReducer, useRef, useState } from 'preact/hooks';
 import type { MenuItem, StoreMenu } from './menu';
 import { loadState, saveState } from './storage';
-import { breakdown, itemKey, reduce, total, type Action, type BreakdownLine, type CustomEntry, type State } from './tally';
+import {
+  breakdown,
+  isValidPrice,
+  itemKey,
+  MAX_PRICE,
+  pruneUnknownItems,
+  reduce,
+  total,
+  type Action,
+  type BreakdownLine,
+  type CustomEntry,
+  type State,
+} from './tally';
 
 const yen = (n: number) => `¥${n.toLocaleString('ja-JP')}`;
 
 type Dispatch = (action: Action) => void;
 
 export function App({ menu }: { menu: StoreMenu }) {
-  const [state, dispatch] = useReducer(reduce, undefined, () => loadState(localStorage));
-  useEffect(() => saveState(localStorage, state), [state]);
+  const [state, dispatch] = useReducer(reduce, undefined, () =>
+    pruneUnknownItems(loadState(localStorage), menu),
+  );
+  // 描画直後に同期的に保存する。useEffect だと直後の再読み込みに保存が間に合わないことがある
+  useLayoutEffect(() => saveState(localStorage, state), [state]);
 
   const categories = useMemo(() => groupByCategory(menu.items), [menu]);
   const lines = breakdown(state, menu);
   const sum = total(state, menu);
+  const hasEntries = Object.keys(state.counts).length > 0 || state.customs.length > 0;
 
   const clear = () => {
-    if (sum === 0) return;
+    if (!hasEntries) return;
     if (window.confirm('集計をクリアしますか?')) dispatch({ type: 'clear' });
   };
 
   return (
     <>
       <div class="top">
-        <Header store={menu.store} sum={sum} lines={lines} onClear={clear} />
+        <Header store={menu.store} sum={sum} lines={lines} canClear={hasEntries} onClear={clear} />
         <CategoryNav categories={categories.map((c) => c.category)} />
       </div>
       <main>
@@ -51,11 +67,13 @@ function Header({
   store,
   sum,
   lines,
+  canClear,
   onClear,
 }: {
   store: string;
   sum: number;
   lines: BreakdownLine[];
+  canClear: boolean;
   onClear: () => void;
 }) {
   const [open, setOpen] = useState(false);
@@ -63,7 +81,7 @@ function Header({
     <header class="header">
       <div class="header-row">
         <h1 class="store">{store}</h1>
-        <button type="button" class="clear" onClick={onClear} disabled={sum === 0}>
+        <button type="button" class="clear" onClick={onClear} disabled={!canClear}>
           クリア
         </button>
       </div>
@@ -149,8 +167,9 @@ function MenuSection({
 
 function CustomSection({ customs, dispatch }: { customs: CustomEntry[]; dispatch: Dispatch }) {
   const [price, setPrice] = useState('');
+  const inputRef = useRef<HTMLInputElement>(null);
   const parsed = Number(price);
-  const valid = price !== '' && Number.isInteger(parsed) && parsed > 0;
+  const valid = price !== '' && isValidPrice(parsed);
 
   const add = (e: Event) => {
     e.preventDefault();
@@ -159,15 +178,23 @@ function CustomSection({ customs, dispatch }: { customs: CustomEntry[]; dispatch
     setPrice('');
   };
 
+  const decrement = (c: CustomEntry) => {
+    dispatch({ type: 'decrementCustom', id: c.id });
+    // 行ごと消えるとフォーカスが宙に浮くので、金額入力へ移す
+    if (c.count === 1) inputRef.current?.focus();
+  };
+
   return (
     <section id={sectionId('その他')} class="section">
       <h2>その他</h2>
       <p class="hint">一覧に無い品は金額を入れて追加してください。</p>
       <form class="custom-form" onSubmit={add}>
         <input
+          ref={inputRef}
           type="number"
           inputMode="numeric"
           min="1"
+          max={MAX_PRICE}
           step="1"
           placeholder="金額(税込)"
           value={price}
@@ -187,7 +214,7 @@ function CustomSection({ customs, dispatch }: { customs: CustomEntry[]; dispatch
               <Counter
                 count={c.count}
                 label={`その他 ${yen(c.price)}`}
-                onDecrement={() => dispatch({ type: 'decrementCustom', id: c.id })}
+                onDecrement={() => decrement(c)}
                 onIncrement={() => dispatch({ type: 'incrementCustom', id: c.id })}
               />
             </li>

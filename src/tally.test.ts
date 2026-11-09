@@ -1,6 +1,16 @@
 import { describe, expect, it } from 'vitest';
 import type { StoreMenu } from './menu';
-import { breakdown, emptyState, itemKey, reduce, total, type State } from './tally';
+import {
+  breakdown,
+  emptyState,
+  itemKey,
+  MAX_COUNT,
+  MAX_PRICE,
+  pruneUnknownItems,
+  reduce,
+  total,
+  type State,
+} from './tally';
 
 const menu: StoreMenu = {
   store: 'テスト店',
@@ -52,6 +62,11 @@ describe('reduce: メニュー品目の個数', () => {
     expect(s.counts).toEqual({});
   });
 
+  it('個数は上限 MAX_COUNT で止まる', () => {
+    const s = apply(Array.from({ length: MAX_COUNT + 5 }, () => ({ type: 'increment' as const, key: maguro })));
+    expect(s.counts[maguro]).toBe(MAX_COUNT);
+  });
+
   it('状態オブジェクトを破壊的に変更しない', () => {
     const before = apply([{ type: 'increment', key: maguro }]);
     const snapshot = structuredClone(before);
@@ -79,14 +94,29 @@ describe('reduce: その他(任意金額)', () => {
     expect(s.customs.map((c) => c.price)).toEqual([330, 440]);
   });
 
-  it('0 以下や整数でない金額は無視する', () => {
+  it('0 以下・整数でない・上限超え・安全でない整数の金額は無視する', () => {
     const s = apply([
       { type: 'addCustom', price: 0 },
       { type: 'addCustom', price: -10 },
       { type: 'addCustom', price: 10.5 },
       { type: 'addCustom', price: Number.NaN },
+      { type: 'addCustom', price: MAX_PRICE + 1 },
+      { type: 'addCustom', price: 1e308 },
+      { type: 'addCustom', price: Number.MAX_SAFE_INTEGER + 2 },
     ]);
     expect(s.customs).toEqual([]);
+  });
+
+  it('上限ちょうどの金額は受け付ける', () => {
+    const s = apply([{ type: 'addCustom', price: MAX_PRICE }]);
+    expect(s.customs[0]?.price).toBe(MAX_PRICE);
+  });
+
+  it('その他の個数も上限 MAX_COUNT で止まる', () => {
+    const added = apply([{ type: 'addCustom', price: 330 }]);
+    const id = added.customs[0]!.id;
+    const s = apply(Array.from({ length: MAX_COUNT + 5 }, () => ({ type: 'incrementCustom' as const, id })), added);
+    expect(s.customs[0]?.count).toBe(MAX_COUNT);
   });
 
   it('incrementCustom / decrementCustom で個数が増減し、0 になると行が消える', () => {
@@ -112,6 +142,25 @@ describe('reduce: clear', () => {
       { type: 'clear' },
     ]);
     expect(s).toEqual(emptyState);
+  });
+});
+
+describe('pruneUnknownItems', () => {
+  it('メニューに無い品目の個数を捨て、ある品目とその他は残す', () => {
+    const s = apply([
+      { type: 'increment', key: 'にぎり/廃盤ネタ' },
+      { type: 'increment', key: maguro },
+      { type: 'addCustom', price: 330 },
+    ]);
+    expect(pruneUnknownItems(s, menu)).toEqual({
+      counts: { [maguro]: 1 },
+      customs: [{ id: 'custom:330', price: 330, count: 1 }],
+    });
+  });
+
+  it('捨てるものが無ければ同じオブジェクトを返す', () => {
+    const s = apply([{ type: 'increment', key: maguro }]);
+    expect(pruneUnknownItems(s, menu)).toBe(s);
   });
 });
 

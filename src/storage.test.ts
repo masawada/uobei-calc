@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { loadState, saveState, STORAGE_KEY } from './storage';
-import { emptyState, type State } from './tally';
+import { emptyState, MAX_COUNT, MAX_PRICE, type State } from './tally';
 
 class MemoryStorage implements Pick<Storage, 'getItem' | 'setItem'> {
   private map = new Map<string, string>();
@@ -40,7 +40,7 @@ describe('saveState / loadState', () => {
     expect(loadState(storage)).toEqual(emptyState);
   });
 
-  it('個数が正の整数でない品目と、不正なその他行は捨てる', () => {
+  it('個数が正の整数でない品目と、金額や個数が不正なその他行は捨てる', () => {
     const storage = new MemoryStorage();
     storage.setItem(
       STORAGE_KEY,
@@ -50,13 +50,56 @@ describe('saveState / loadState', () => {
           { id: 'custom:330', price: 330, count: 1 },
           { id: 'custom:0', price: 0, count: 1 },
           { id: 'custom:440', price: 440, count: 0 },
-          { price: 550, count: 1 },
+          { id: 'custom:10', price: 10.5, count: 1 },
+          { id: 'custom:20', price: '20', count: 1 },
+          'not an object',
         ],
       }),
     );
     expect(loadState(storage)).toEqual({
       counts: { a: 1 },
       customs: [{ id: 'custom:330', price: 330, count: 1 }],
+    });
+  });
+
+  it('その他行の id は保存値を信用せず金額から決め直し、同じ金額は 1 行にまとめる', () => {
+    const storage = new MemoryStorage();
+    storage.setItem(
+      STORAGE_KEY,
+      JSON.stringify({
+        counts: {},
+        customs: [
+          { id: 'custom:330', price: 440, count: 1 },
+          { id: 'whatever', price: 440, count: 2 },
+          { id: 'custom:330', price: 330, count: 1 },
+        ],
+      }),
+    );
+    expect(loadState(storage)).toEqual({
+      counts: {},
+      customs: [
+        { id: 'custom:440', price: 440, count: 3 },
+        { id: 'custom:330', price: 330, count: 1 },
+      ],
+    });
+  });
+
+  it('上限を超える金額・個数と安全でない整数は捨てる(個数は上限で丸める)', () => {
+    const storage = new MemoryStorage();
+    storage.setItem(
+      STORAGE_KEY,
+      JSON.stringify({
+        counts: { a: MAX_COUNT + 1, b: 1e308, c: MAX_COUNT },
+        customs: [
+          { id: 'x', price: MAX_PRICE + 1, count: 1 },
+          { id: 'y', price: 1e308, count: 1 },
+          { id: 'z', price: 330, count: MAX_COUNT + 10 },
+        ],
+      }),
+    );
+    expect(loadState(storage)).toEqual({
+      counts: { a: MAX_COUNT, c: MAX_COUNT },
+      customs: [{ id: 'custom:330', price: 330, count: MAX_COUNT }],
     });
   });
 

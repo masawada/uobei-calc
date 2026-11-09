@@ -1,5 +1,10 @@
 import type { MenuItem, StoreMenu } from './menu';
 
+/** 「その他」で入力できる金額の上限(円)。桁の打ち間違いを弾くための現実的な値。 */
+export const MAX_PRICE = 100_000;
+/** 1 品目あたりの個数の上限。 */
+export const MAX_COUNT = 999;
+
 /** 「その他」で追加した任意金額の行。金額ごとに 1 行にまとめる。 */
 export type CustomEntry = {
   id: string;
@@ -27,17 +32,17 @@ export function itemKey(item: Pick<MenuItem, 'category' | 'name'>): string {
   return `${item.category}/${item.name}`;
 }
 
-function customId(price: number): string {
+export function customIdFor(price: number): string {
   return `custom:${price}`;
 }
 
-function isValidPrice(price: number): boolean {
-  return Number.isInteger(price) && price > 0;
+export function isValidPrice(price: number): boolean {
+  return Number.isSafeInteger(price) && price > 0 && price <= MAX_PRICE;
 }
 
 function changeCustom(customs: CustomEntry[], id: string, delta: number): CustomEntry[] {
   return customs
-    .map((c) => (c.id === id ? { ...c, count: c.count + delta } : c))
+    .map((c) => (c.id === id ? { ...c, count: Math.min(c.count + delta, MAX_COUNT) } : c))
     .filter((c) => c.count > 0);
 }
 
@@ -45,6 +50,7 @@ export function reduce(state: State, action: Action): State {
   switch (action.type) {
     case 'increment': {
       const current = state.counts[action.key] ?? 0;
+      if (current >= MAX_COUNT) return state;
       return { ...state, counts: { ...state.counts, [action.key]: current + 1 } };
     }
     case 'decrement': {
@@ -57,7 +63,7 @@ export function reduce(state: State, action: Action): State {
     }
     case 'addCustom': {
       if (!isValidPrice(action.price)) return state;
-      const id = customId(action.price);
+      const id = customIdFor(action.price);
       if (state.customs.some((c) => c.id === id)) {
         return { ...state, customs: changeCustom(state.customs, id, 1) };
       }
@@ -70,6 +76,16 @@ export function reduce(state: State, action: Action): State {
     case 'clear':
       return emptyState;
   }
+}
+
+/** メニューから消えた品目の個数を捨てる。捨てるものが無ければ同じ state を返す。 */
+export function pruneUnknownItems(state: State, menu: StoreMenu): State {
+  const known = new Set(menu.items.map(itemKey));
+  const stale = Object.keys(state.counts).filter((key) => !known.has(key));
+  if (stale.length === 0) return state;
+  const counts = { ...state.counts };
+  for (const key of stale) delete counts[key];
+  return { ...state, counts };
 }
 
 export type BreakdownLine = {
