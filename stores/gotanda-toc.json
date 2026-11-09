@@ -1,0 +1,1197 @@
+{
+  "store": "魚べい 五反田TOC店",
+  "updatedAt": "2026-11-09",
+  "source": "https://www.uobei.info/menu/?topics_id=1112",
+  "items": [
+    {
+      "category": "フェア商品",
+      "name": "黒がれい",
+      "price": 110
+    },
+    {
+      "category": "フェア商品",
+      "name": "アイスランド貝（長寿貝）",
+      "price": 110
+    },
+    {
+      "category": "フェア商品",
+      "name": "キムチ納豆ぐんかん",
+      "price": 110
+    },
+    {
+      "category": "フェア商品",
+      "name": "岩下の新生姜®いなり",
+      "price": 143
+    },
+    {
+      "category": "フェア商品",
+      "name": "青森県産蒸しほたて",
+      "price": 143
+    },
+    {
+      "category": "フェア商品",
+      "name": "中とろ",
+      "price": 176
+    },
+    {
+      "category": "フェア商品",
+      "name": "貝わさびぐんかん",
+      "price": 176
+    },
+    {
+      "category": "フェア商品",
+      "name": "真鯛",
+      "price": 209
+    },
+    {
+      "category": "フェア商品",
+      "name": "特大赤えび",
+      "price": 209
+    },
+    {
+      "category": "フェア商品",
+      "name": "岩手県産やりいか",
+      "price": 242
+    },
+    {
+      "category": "フェア商品",
+      "name": "金華さば",
+      "price": 264
+    },
+    {
+      "category": "フェア商品",
+      "name": "お得！まぐろづくし",
+      "price": 319
+    },
+    {
+      "category": "フェア商品",
+      "name": "国産金目鯛湯引き",
+      "price": 319
+    },
+    {
+      "category": "フェア商品",
+      "name": "前日光ローストビーフにぎり",
+      "price": 330
+    },
+    {
+      "category": "フェア商品",
+      "name": "青森県産いかづくし",
+      "price": 451
+    },
+    {
+      "category": "フェア商品",
+      "name": "キッズセット",
+      "price": 638
+    },
+    {
+      "category": "フェア商品",
+      "name": "ほのか",
+      "price": 1056
+    },
+    {
+      "category": "フェア商品",
+      "name": "活け〆しまあじ",
+      "price": 275
+    },
+    {
+      "category": "フェア商品",
+      "name": "厳選白身三昧",
+      "price": 451
+    },
+    {
+      "category": "握り",
+      "name": "蒸しほたて",
+      "price": 110
+    },
+    {
+      "category": "握り",
+      "name": "あかがい・蒸しほたて",
+      "price": 110
+    },
+    {
+      "category": "握り",
+      "name": "あかがい",
+      "price": 110
+    },
+    {
+      "category": "握り",
+      "name": "赤魚",
+      "price": 110
+    },
+    {
+      "category": "握り",
+      "name": "いか",
+      "price": 110
+    },
+    {
+      "category": "握り",
+      "name": "いか山わさびのせ",
+      "price": 110
+    },
+    {
+      "category": "握り",
+      "name": "ほたるいか沖漬け",
+      "price": 110
+    },
+    {
+      "category": "握り",
+      "name": "活け〆蒸しえび",
+      "price": 110
+    },
+    {
+      "category": "握り",
+      "name": "えび",
+      "price": 110
+    },
+    {
+      "category": "握り",
+      "name": "えび・いか",
+      "price": 110
+    },
+    {
+      "category": "握り",
+      "name": "えび・たまご",
+      "price": 110
+    },
+    {
+      "category": "握り",
+      "name": "こはだ",
+      "price": 110
+    },
+    {
+      "category": "握り",
+      "name": "〆さば",
+      "price": 110
+    },
+    {
+      "category": "握り",
+      "name": "とろにしん",
+      "price": 110
+    },
+    {
+      "category": "握り",
+      "name": "炙りにしん",
+      "price": 110
+    },
+    {
+      "category": "握り",
+      "name": "たまご",
+      "price": 110
+    },
+    {
+      "category": "握り",
+      "name": "真いか耳漬け",
+      "price": 110
+    },
+    {
+      "category": "握り",
+      "name": "あさりにぎり",
+      "price": 110
+    },
+    {
+      "category": "握り",
+      "name": "かにかま",
+      "price": 110
+    },
+    {
+      "category": "握り",
+      "name": "えび明太マヨ",
+      "price": 110
+    },
+    {
+      "category": "握り",
+      "name": "合鴨にぎり",
+      "price": 110
+    },
+    {
+      "category": "握り",
+      "name": "合鴨明太マヨ",
+      "price": 110
+    },
+    {
+      "category": "握り",
+      "name": "合鴨ペッパーマヨ炙り",
+      "price": 110
+    },
+    {
+      "category": "握り",
+      "name": "合鴨チーズ炙り",
+      "price": 110
+    },
+    {
+      "category": "握り",
+      "name": "かにかま明太マヨ",
+      "price": 110
+    },
+    {
+      "category": "握り",
+      "name": "かにかまペッパーマヨ炙り",
+      "price": 110
+    },
+    {
+      "category": "握り",
+      "name": "かにかまチーズ炙り",
+      "price": 110
+    },
+    {
+      "category": "握り",
+      "name": "えびフライ",
+      "price": 110
+    },
+    {
+      "category": "握り",
+      "name": "生ハムマヨ",
+      "price": 110
+    },
+    {
+      "category": "握り",
+      "name": "ベーコンマヨにぎり",
+      "price": 110
+    },
+    {
+      "category": "握り",
+      "name": "ジューシーハンバーグ",
+      "price": 110
+    },
+    {
+      "category": "握り",
+      "name": "あらびきウィンナー",
+      "price": 110
+    },
+    {
+      "category": "握り",
+      "name": "なす浅漬け",
+      "price": 110
+    },
+    {
+      "category": "握り",
+      "name": "チヂミ",
+      "price": 110
+    },
+    {
+      "category": "握り",
+      "name": "シャリ3貫",
+      "price": 110
+    },
+    {
+      "category": "握り",
+      "name": "豚カルビ",
+      "price": 143
+    },
+    {
+      "category": "握り",
+      "name": "上びんちょう",
+      "price": 143
+    },
+    {
+      "category": "握り",
+      "name": "上びんちょう山わさびのせ",
+      "price": 143
+    },
+    {
+      "category": "握り",
+      "name": "まぐろたたき盛り",
+      "price": 143
+    },
+    {
+      "category": "握り",
+      "name": "サーモン",
+      "price": 143
+    },
+    {
+      "category": "握り",
+      "name": "サーモン・焼サーモン",
+      "price": 143
+    },
+    {
+      "category": "握り",
+      "name": "焼サーモン",
+      "price": 143
+    },
+    {
+      "category": "握り",
+      "name": "サーモンマヨ",
+      "price": 143
+    },
+    {
+      "category": "握り",
+      "name": "えび天　天たれがけ",
+      "price": 143
+    },
+    {
+      "category": "握り",
+      "name": "えびペッパーマヨ炙り",
+      "price": 143
+    },
+    {
+      "category": "握り",
+      "name": "えびマヨ炙り",
+      "price": 143
+    },
+    {
+      "category": "握り",
+      "name": "えびねぎラー油",
+      "price": 143
+    },
+    {
+      "category": "握り",
+      "name": "えび揚げねぎラー油",
+      "price": 143
+    },
+    {
+      "category": "握り",
+      "name": "えび明太マヨサラダ",
+      "price": 143
+    },
+    {
+      "category": "握り",
+      "name": "かにかま明太マヨサラダ",
+      "price": 143
+    },
+    {
+      "category": "握り",
+      "name": "合鴨明太マヨサラダ",
+      "price": 143
+    },
+    {
+      "category": "握り",
+      "name": "生ハムサラダ",
+      "price": 143
+    },
+    {
+      "category": "握り",
+      "name": "こういか",
+      "price": 143
+    },
+    {
+      "category": "握り",
+      "name": "ほっき貝",
+      "price": 143
+    },
+    {
+      "category": "握り",
+      "name": "煮あなご",
+      "price": 143
+    },
+    {
+      "category": "握り",
+      "name": "いわし",
+      "price": 143
+    },
+    {
+      "category": "握り",
+      "name": "えんがわ",
+      "price": 143
+    },
+    {
+      "category": "握り",
+      "name": "大切りとろサーモン",
+      "price": 176
+    },
+    {
+      "category": "握り",
+      "name": "オニオンサーモン",
+      "price": 176
+    },
+    {
+      "category": "握り",
+      "name": "サーモンアボカドにぎり",
+      "price": 176
+    },
+    {
+      "category": "握り",
+      "name": "サーモンねぎラー油",
+      "price": 176
+    },
+    {
+      "category": "握り",
+      "name": "サーモン揚げねぎラー油",
+      "price": 176
+    },
+    {
+      "category": "握り",
+      "name": "サーモンペッパーマヨ炙り",
+      "price": 176
+    },
+    {
+      "category": "握り",
+      "name": "サーモンマヨ炙り",
+      "price": 176
+    },
+    {
+      "category": "握り",
+      "name": "上びんちょうねぎラー油",
+      "price": 176
+    },
+    {
+      "category": "握り",
+      "name": "上びんちょうペッパーマヨ炙り",
+      "price": 176
+    },
+    {
+      "category": "握り",
+      "name": "上びんちょうマヨ炙り",
+      "price": 176
+    },
+    {
+      "category": "握り",
+      "name": "まぐろたたきねぎラー油",
+      "price": 176
+    },
+    {
+      "category": "握り",
+      "name": "アボカドシュリンプ",
+      "price": 176
+    },
+    {
+      "category": "握り",
+      "name": "大切りまぐろ",
+      "price": 176
+    },
+    {
+      "category": "握り",
+      "name": "つぶ貝",
+      "price": 176
+    },
+    {
+      "category": "握り",
+      "name": "たこ",
+      "price": 176
+    },
+    {
+      "category": "握り",
+      "name": "大切りうなぎ",
+      "price": 176
+    },
+    {
+      "category": "握り",
+      "name": "はまち",
+      "price": 176
+    },
+    {
+      "category": "握り",
+      "name": "甘えび",
+      "price": 176
+    },
+    {
+      "category": "握り",
+      "name": "まぐろステーキ",
+      "price": 209
+    },
+    {
+      "category": "握り",
+      "name": "大切りとろサーモンステーキ",
+      "price": 209
+    },
+    {
+      "category": "握り",
+      "name": "ふわとろあなご",
+      "price": 209
+    },
+    {
+      "category": "握り",
+      "name": "活け〆真鯛",
+      "price": 209
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "貝柱明太マヨ",
+      "price": 110
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "にしん切り込みぐんかん",
+      "price": 110
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "北海道産たらマヨ",
+      "price": 110
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "おくら納豆ぐんかん",
+      "price": 110
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "海鮮ユッケ風",
+      "price": 110
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "いかおくら",
+      "price": 110
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "かにみそ",
+      "price": 110
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "コーン",
+      "price": 110
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "ツナサラダ",
+      "price": 110
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "ツナサラダ・コーン",
+      "price": 110
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "ししゃもっこ",
+      "price": 110
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "納豆",
+      "price": 110
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "シーフードサラダ",
+      "price": 110
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "スパイシーサラダ",
+      "price": 110
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "あさり明太マヨぐんかん",
+      "price": 110
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "サーモンマヨネーズ",
+      "price": 110
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "いかサラダぐんかん",
+      "price": 110
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "いなり",
+      "price": 110
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "お新香巻",
+      "price": 110
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "かっぱ巻",
+      "price": 110
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "かんぴょう巻",
+      "price": 110
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "納豆巻",
+      "price": 110
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "えびマヨ",
+      "price": 143
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "まぐろたたきぐんかん",
+      "price": 143
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "まぐたくぐんかん",
+      "price": 143
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "まぐろたたき納豆",
+      "price": 143
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "いか昆布ぐんかん",
+      "price": 143
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "あんきも",
+      "price": 143
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "まぐたく巻",
+      "price": 143
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "まぐろたたき巻",
+      "price": 143
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "しば漬巻",
+      "price": 143
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "すぐき漬巻",
+      "price": 143
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "さばの押し寿司",
+      "price": 143
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "かっぱ巻山わさびのせ",
+      "price": 143
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "かんぴょう巻山わさびのせ",
+      "price": 143
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "納豆巻山わさびのせ",
+      "price": 143
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "まぐろたたき巻山わさびのせ",
+      "price": 143
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "味玉ぐんかん",
+      "price": 176
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "とびこぐんかん",
+      "price": 176
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "鉄火巻",
+      "price": 176
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "鉄火巻山わさびのせ",
+      "price": 176
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "とろさばの押し寿司",
+      "price": 176
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "えび天巻",
+      "price": 176
+    },
+    {
+      "category": "軍艦・巻物・いなり",
+      "name": "いくら",
+      "price": 209
+    },
+    {
+      "category": "サイドメニュー",
+      "name": "ランチ醤油ラーメン",
+      "price": 99
+    },
+    {
+      "category": "サイドメニュー",
+      "name": "ランチたぬきうどん",
+      "price": 99
+    },
+    {
+      "category": "サイドメニュー",
+      "name": "ランチかけうどん",
+      "price": 99
+    },
+    {
+      "category": "サイドメニュー",
+      "name": "平日限定 味玉ラーメン",
+      "price": 176
+    },
+    {
+      "category": "サイドメニュー",
+      "name": "平日限定 めかぶうどん",
+      "price": 176
+    },
+    {
+      "category": "サイドメニュー",
+      "name": "平日限定濃厚味噌ラーメン",
+      "price": 209
+    },
+    {
+      "category": "サイドメニュー",
+      "name": "平日限定濃厚辛味噌ラーメン",
+      "price": 242
+    },
+    {
+      "category": "サイドメニュー",
+      "name": "えだまめコーン",
+      "price": 110
+    },
+    {
+      "category": "サイドメニュー",
+      "name": "冷奴",
+      "price": 110
+    },
+    {
+      "category": "サイドメニュー",
+      "name": "明太オニオンサラダ",
+      "price": 110
+    },
+    {
+      "category": "サイドメニュー",
+      "name": "アスパラ揚げ",
+      "price": 209
+    },
+    {
+      "category": "サイドメニュー",
+      "name": "牛肉入りコロッケ",
+      "price": 209
+    },
+    {
+      "category": "サイドメニュー",
+      "name": "やみつき鶏むね唐揚げ",
+      "price": 275
+    },
+    {
+      "category": "サイドメニュー",
+      "name": "めかぶのみそ汁",
+      "price": 110
+    },
+    {
+      "category": "サイドメニュー",
+      "name": "めかぶのみそ汁 赤だし",
+      "price": 110
+    },
+    {
+      "category": "サイドメニュー",
+      "name": "あさりのみそ汁",
+      "price": 231
+    },
+    {
+      "category": "サイドメニュー",
+      "name": "あさりのみそ汁 赤だし",
+      "price": 231
+    },
+    {
+      "category": "サイドメニュー",
+      "name": "茶碗蒸し",
+      "price": 264
+    },
+    {
+      "category": "サイドメニュー",
+      "name": "めかぶの茶碗蒸し",
+      "price": 264
+    },
+    {
+      "category": "サイドメニュー",
+      "name": "フライドポテト",
+      "price": 297
+    },
+    {
+      "category": "サイドメニュー",
+      "name": "醤油バターソースポテト",
+      "price": 308
+    },
+    {
+      "category": "サイドメニュー",
+      "name": "明太マヨポテト",
+      "price": 308
+    },
+    {
+      "category": "サイドメニュー",
+      "name": "スティックチキン",
+      "price": 231
+    },
+    {
+      "category": "サイドメニュー",
+      "name": "特製濃厚味噌ラーメン",
+      "price": 407
+    },
+    {
+      "category": "サイドメニュー",
+      "name": "特製濃厚辛味噌ラーメン",
+      "price": 440
+    },
+    {
+      "category": "サイドメニュー",
+      "name": "大阪発祥！かすうどん",
+      "price": 396
+    },
+    {
+      "category": "サイドメニュー",
+      "name": "こだわり醤油ラーメン",
+      "price": 407
+    },
+    {
+      "category": "サイドメニュー",
+      "name": "チャーシュー麺",
+      "price": 506
+    },
+    {
+      "category": "サイドメニュー",
+      "name": "たぬきうどん",
+      "price": 176
+    },
+    {
+      "category": "サイドメニュー",
+      "name": "えび天うどん",
+      "price": 341
+    },
+    {
+      "category": "サイドメニュー",
+      "name": "温玉明太うどん",
+      "price": 341
+    },
+    {
+      "category": "サイドメニュー",
+      "name": "カルボうどん",
+      "price": 396
+    },
+    {
+      "category": "サイドメニュー",
+      "name": "味噌ひれかつ",
+      "price": 220
+    },
+    {
+      "category": "サイドメニュー",
+      "name": "たれかつ",
+      "price": 220
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "抹茶クリーム大福",
+      "price": 110
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "きなこおはぎ",
+      "price": 110
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "チョコクレープ",
+      "price": 110
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "シューアイスバニラ",
+      "price": 110
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "フローズンライチ",
+      "price": 110
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "しゅわしゅわアイスバー",
+      "price": 110
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "豆大福",
+      "price": 110
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "ミニゼリー3個",
+      "price": 110
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "北海道きなこと沖縄黒蜜のわらび餅",
+      "price": 110
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "北海道あずきのいももち",
+      "price": 110
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "北海道あずきのいももち(ホイップ)",
+      "price": 154
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "チョコレートケーキ",
+      "price": 220
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "特製プリン",
+      "price": 231
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "ANY1 ICE あずき",
+      "price": 319
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "スイートポテトケーキ",
+      "price": 319
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "ザクっとお芋パフェ",
+      "price": 429
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "ソフトクリーム",
+      "price": 297
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "ソフトクリーム チョコソース",
+      "price": 297
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "チョコレートパフェ",
+      "price": 352
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "ぷるんぷるんクー ぶどう",
+      "price": 198
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "ぷるんぷるんクー りんご",
+      "price": 198
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "お子様りんごジュース",
+      "price": 110
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "一番搾り生ビール",
+      "price": 561
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "グラスビール",
+      "price": 341
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "グリーンズフリー",
+      "price": 396
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "スーパードライ生ビール",
+      "price": 561
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "スーパードライグラスビール",
+      "price": 341
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "ハイボール（ホワイトホース）",
+      "price": 473
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "メガハイボール（ホワイトホース）",
+      "price": 759
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "ハイボール（ブラックニッカ）",
+      "price": 473
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "メガハイボール（ブラックニッカ）",
+      "price": 759
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "レモンサワー",
+      "price": 451
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "氷結®無糖レモン",
+      "price": 451
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "生冷酒",
+      "price": 495
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "芋焼酎（水割り）/（炭酸割り）",
+      "price": 517
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "芋焼酎（ロック）",
+      "price": 517
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "麦焼酎（水割り）/（炭酸割り）",
+      "price": 517
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "麦焼酎（ロック）",
+      "price": 517
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "アサヒドライゼロ",
+      "price": 396
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "スマドリ ゆずサワー",
+      "price": 396
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "スペシャルティアイスカフェラテ",
+      "price": 264
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "スペシャルティカフェラテ",
+      "price": 264
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "スペシャルティアイスコーヒー",
+      "price": 220
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "スペシャルティコーヒー",
+      "price": 220
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "コカ・コーラ",
+      "price": 165
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "コカ・コーラW",
+      "price": 242
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "MEGAコカ・コーラ",
+      "price": 418
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "ファンタ メロンソーダ",
+      "price": 165
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "ファンタ メロンソーダＷ",
+      "price": 242
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "MEGAファンタ メロンソーダ",
+      "price": 418
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "ミニッツメイド アップル",
+      "price": 165
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "ミニッツメイド アップルW",
+      "price": 242
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "MEGAミニッツメイド アップル",
+      "price": 418
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "カルピス",
+      "price": 165
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "カルピスW",
+      "price": 242
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "MEGAカルピス",
+      "price": 418
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "ウーロン茶",
+      "price": 165
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "ウーロン茶W",
+      "price": 242
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "MEGAウーロン茶",
+      "price": 418
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "Qooオレンジ",
+      "price": 165
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "QooオレンジW",
+      "price": 242
+    },
+    {
+      "category": "デザート・ドリンク",
+      "name": "MEGAQooオレンジ",
+      "price": 418
+    }
+  ]
+}
