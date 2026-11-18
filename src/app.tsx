@@ -82,7 +82,11 @@ export function App({ menu }: { menu: StoreMenu }) {
         )}
       </div>
       <main>
-        {categories.length === 0 && <p class="no-results">一致する商品がありません</p>}
+        {categories.length === 0 && (
+          <p class="no-results" role="status">
+            一致する商品がありません
+          </p>
+        )}
         {categories.map((c) => (
           <MenuSection key={c.category} category={c.category} items={c.items} state={state} dispatch={dispatch} />
         ))}
