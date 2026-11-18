@@ -66,13 +66,30 @@ button:disabled {
   text-overflow: ellipsis;
 }
 
-.clear {
+.header-actions {
+  flex: none;
+  display: flex;
+  gap: 8px;
+}
+
+.clear,
+.search-toggle {
   min-height: 36px;
   padding: 0 12px;
   border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 8px;
   background: transparent;
   color: #fff;
+}
+
+.search-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  padding: 0;
+  font-size: 22px;
+  line-height: 1;
 }
 
 .clear:disabled {
@@ -174,9 +191,36 @@ button:disabled {
   white-space: nowrap;
 }
 
+/* 商品名検索。開いている間はカテゴリジャンプと入れ替わる */
+.search {
+  padding: 6px 12px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+
+.search input {
+  display: block;
+  width: 100%;
+  min-height: var(--tap);
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--card);
+  color: var(--text);
+  font: inherit;
+  /* 16px 未満だと iOS がフォーカス時に画面を拡大する */
+  font-size: 16px;
+}
+
 /* セクションと品目 */
 main {
   padding: 0 12px 24px;
+}
+
+.no-results {
+  margin: 24px 0 8px;
+  color: var(--muted);
+  text-align: center;
 }
 
 .section {
