@@ -1,5 +1,6 @@
 import { useLayoutEffect, useMemo, useReducer, useRef, useState } from 'preact/hooks';
 import type { MenuItem, StoreMenu } from './menu';
+import { searchItems } from './search';
 import { loadState, saveState } from './storage';
 import {
   breakdown,
@@ -26,7 +27,13 @@ export function App({ menu }: { menu: StoreMenu }) {
   // 描画直後に同期的に保存する。useEffect だと直後の再読み込みに保存が間に合わないことがある
   useLayoutEffect(() => saveState(localStorage, state), [state]);
 
-  const categories = useMemo(() => groupByCategory(menu.items), [menu]);
+  // 検索語。null は検索欄を閉じている状態で、開いている間だけ一覧を絞り込む
+  const [query, setQuery] = useState<string | null>(null);
+  const searching = query !== null;
+  // 検索欄を開いた時点のスクロール位置。閉じたときにここへ戻す
+  const scrollBeforeSearch = useRef<number | null>(null);
+
+  const categories = useMemo(() => groupByCategory(searchItems(menu.items, query ?? '')), [menu, query]);
   const lines = breakdown(state, menu);
   const sum = total(state, menu);
   const hasEntries = Object.keys(state.counts).length > 0 || state.customs.length > 0;
@@ -36,13 +43,50 @@ export function App({ menu }: { menu: StoreMenu }) {
     if (window.confirm('集計をクリアしますか?')) dispatch({ type: 'clear' });
   };
 
+  const toggleSearch = () => {
+    if (searching) {
+      setQuery(null);
+    } else {
+      scrollBeforeSearch.current = window.scrollY;
+      setQuery('');
+    }
+  };
+
+  // 絞り込むと一覧の長さが変わるので、描画直後にスクロール位置を合わせる
+  useLayoutEffect(() => {
+    if (query === null) {
+      if (scrollBeforeSearch.current === null) return;
+      window.scrollTo(0, scrollBeforeSearch.current);
+      scrollBeforeSearch.current = null;
+    } else if (query !== '') {
+      window.scrollTo(0, 0);
+    }
+  }, [query]);
+
   return (
     <>
       <div class="top">
-        <Header store={menu.store} sum={sum} lines={lines} canClear={hasEntries} onClear={clear} />
-        <CategoryNav categories={categories.map((c) => c.category)} />
+        <Header
+          store={menu.store}
+          sum={sum}
+          lines={lines}
+          canClear={hasEntries}
+          onClear={clear}
+          searching={searching}
+          onToggleSearch={toggleSearch}
+        />
+        {searching ? (
+          <SearchBox query={query} onInput={setQuery} />
+        ) : (
+          <CategoryNav categories={categories.map((c) => c.category)} />
+        )}
       </div>
       <main>
+        {categories.length === 0 && (
+          <p class="no-results" role="status">
+            一致する商品がありません
+          </p>
+        )}
         {categories.map((c) => (
           <MenuSection key={c.category} category={c.category} items={c.items} state={state} dispatch={dispatch} />
         ))}
@@ -69,21 +113,37 @@ function Header({
   lines,
   canClear,
   onClear,
+  searching,
+  onToggleSearch,
 }: {
   store: string;
   sum: number;
   lines: BreakdownLine[];
   canClear: boolean;
   onClear: () => void;
+  searching: boolean;
+  onToggleSearch: () => void;
 }) {
   const [open, setOpen] = useState(false);
   return (
     <header class="header">
       <div class="header-row">
         <h1 class="store">{store}</h1>
-        <button type="button" class="clear" onClick={onClear} disabled={!canClear}>
-          クリア
-        </button>
+        <div class="header-actions">
+          <button
+            type="button"
+            class="search-toggle"
+            onClick={onToggleSearch}
+            aria-expanded={searching}
+            aria-controls="search"
+            aria-label={searching ? '検索を閉じる' : '商品名で検索'}
+          >
+            {searching ? '×' : <SearchIcon />}
+          </button>
+          <button type="button" class="clear" onClick={onClear} disabled={!canClear}>
+            クリア
+          </button>
+        </div>
       </div>
       <button
         type="button"
@@ -111,6 +171,51 @@ function Header({
         </ul>
       )}
     </header>
+  );
+}
+
+function SearchIcon() {
+  return (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2.5"
+      stroke-linecap="round"
+      aria-hidden="true"
+    >
+      <circle cx="10.5" cy="10.5" r="6.5" />
+      <path d="M15.5 15.5 21 21" />
+    </svg>
+  );
+}
+
+function SearchBox({ query, onInput }: { query: string; onInput: (query: string) => void }) {
+  const inputRef = useRef<HTMLInputElement>(null);
+  // 開いたらすぐ打てるようにする。タップの処理中に同期的に呼ばないと iOS でキーボードが出ないので useEffect にしない
+  useLayoutEffect(() => inputRef.current?.focus(), []);
+
+  // キーボードの「検索」で入力を終え、結果を広く見せる
+  const submit = (e: Event) => {
+    e.preventDefault();
+    inputRef.current?.blur();
+  };
+
+  return (
+    <form id="search" class="search" role="search" onSubmit={submit}>
+      <input
+        ref={inputRef}
+        type="search"
+        enterKeyHint="search"
+        autoComplete="off"
+        placeholder="商品名で検索"
+        value={query}
+        onInput={(e) => onInput((e.target as HTMLInputElement).value)}
+        aria-label="商品名で検索"
+      />
+    </form>
   );
 }
 
